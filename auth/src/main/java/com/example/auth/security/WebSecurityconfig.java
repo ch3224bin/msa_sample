@@ -1,4 +1,4 @@
-package com.example.auth.global.config;
+package com.example.auth.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

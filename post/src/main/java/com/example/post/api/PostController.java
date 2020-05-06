@@ -1,4 +1,4 @@
-package com.example.user.api;
+package com.example.post.api;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -7,22 +7,22 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.user.dto.UserDc;
-import com.example.user.service.UserService;
+import com.example.post.dto.PostDc;
+import com.example.post.service.PostService;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/posts")
+public class PostController {
 	
-	private UserService userService;
+	private PostService postService;
 	
-	public UserController(UserService userService) {
-		this.userService = userService;
+	public PostController(PostService postService) {
+		this.postService = postService;
 	}
-	
+
 	@GetMapping("/{id}")
 	@ResponseStatus(value = HttpStatus.OK)
-	public UserDc.Res getUser(@PathVariable("id") long id) {
-		return userService.getUser(id);
+	public PostDc.Res getPost(@PathVariable("id") long id) {
+		return postService.getPost(id);
 	}
 }
